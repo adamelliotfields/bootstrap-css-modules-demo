@@ -13,7 +13,7 @@ import Home from './pages/Home.jsx';
 import Footer from './components/Footer.jsx';
 
 const Components = asyncComponent(async function () {
-  const module = await import(/* webpackChunkName: 'demo' */ './pages/Components.jsx');
+  const module = await import(/* webpackChunkName: 'components' */ './pages/Components.jsx');
   return module.default;
 });
 
