@@ -35,28 +35,28 @@ class Modal extends Component {
     });
   };
 
-  handleBodyClick = (event) => {
+  modalClick = (event) => {
     if (this.state.show) {
       this.handleClick(event);
     }
   };
 
-  handleEscape = (event) => {
+  modalEscape = (event) => {
     if (event.keyCode === 27 && this.state.show) {
       this.handleClick(event);
     }
   };
 
   componentDidMount () {
-    window.document.body.addEventListener('click', this.handleBodyClick);
+    window.document.body.addEventListener('click', this.modalClick);
 
-    window.document.body.addEventListener('keydown', this.handleEscape);
+    window.document.body.addEventListener('keydown', this.modalEscape);
   }
 
   componentWillUnmount () {
-    window.document.body.removeEventListener('click', this.handleBodyClick);
+    window.document.body.removeEventListener('click', this.modalClick);
 
-    window.document.body.removeEventListener('keydown', this.handleEscape);
+    window.document.body.removeEventListener('keydown', this.modalEscape);
   }
 
   render () {
@@ -73,7 +73,7 @@ class Modal extends Component {
 
         <Transition
           in={this.state.show}
-          timeout={200}
+          timeout={300}
           unmountOnExit
         >
           {(status) => (
@@ -81,7 +81,7 @@ class Modal extends Component {
               className={`${modal}`}
               style={{
                 display: 'block',
-                transition: 'transform 200ms ease-out, opacity 200ms linear',
+                transition: 'transform 300ms ease-out, opacity 200ms linear',
                 transform: (status === 'entering' || status === 'exiting') ? 'translate(0, -25%)' : 'translate(0, 0)',
                 opacity: (status === 'entering' || status === 'exiting') ? 0 : 1
               }}>
@@ -107,19 +107,20 @@ class Modal extends Component {
 
         <Transition
           in={this.state.show}
-          timeout={200}
+          timeout={150}
           unmountOnExit
         >
           {(status) => (
             <div
               className={`${modalBackdrop}`}
               style={{
-                transition: 'opacity 200ms linear',
+                transition: 'opacity 150ms linear',
                 opacity: (status === 'entering' || status === 'exiting') ? 0 : 0.5
               }}
             />
           )}
         </Transition>
+
       </Section>
     );
   }
