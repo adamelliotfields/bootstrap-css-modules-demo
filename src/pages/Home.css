@@ -1,0 +1,14 @@
+.btnOutlineBlack {
+  composes: btn from 'bootstrap-css-modules/css/buttons.css';
+  color: #292b2c;
+  background-color: transparent;
+  border-color: #292b2c;
+}
+
+.btnOutlineBlack:hover,
+.btnOutlineBlack:focus {
+  color: white;
+  background-color: #292b2c;
+  border-color: #292b2c;
+  box-shadow: 0 0 0 2px rgba(41, 43, 44, 0.5);
+}
