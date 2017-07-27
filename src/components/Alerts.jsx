@@ -27,7 +27,6 @@ class Alerts extends Component {
     return (
       <Section
         display='Alerts'
-        lead='Use <code>react-transition-group</code> to animate mounting/unmounting.'
         url='https://github.com/adamelliotfields/bootstrap-css-modules-demo/blob/master/src/components/Alerts.jsx'
       >
         <Transition
